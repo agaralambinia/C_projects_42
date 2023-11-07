@@ -7,5 +7,6 @@ int	    ft_isalnum(char str);
 int     ft_isascii(char str);
 int     ft_isprint(char str);
 int	    ft_strlen(char *str);
+int     ft_atoi(char *str);
 
 #endif
