@@ -4,3 +4,9 @@ int	ft_isalpha(char str)
 		return (1);
 	return (0);
 }
+
+#include <stdio.h>
+int main()
+{
+	printf("%d\n", ft_isalpha(NULL));
+}

@@ -26,3 +26,14 @@ size_t	ft_strlcat(char *dst, const char *src, size_t l)
 	dst[j] = '\0';
 	return ((size_t)(src_len + dst_len));
 }
+
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+    char *a1[10] = "abc";
+    char *a2[10] = "abc";
+    char *a3[10] = NULL;
+	printf("%d\n", ft_strlcat(NULL, NULL, 0));
+	printf("%d\n", strlcat(NULL, NULL, 0));
+}
