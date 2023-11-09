@@ -6,11 +6,3 @@ char    ft_tolower(char c)
         return (c + 32);
     return (c);
 }
-
-#include <ctype.h>
-#include <stdio.h>
-int main()
-{
-    printf("%c\n", ft_tolower(NULL));
-    printf("%c\n", tolower(NULL));
-}

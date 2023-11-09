@@ -2,7 +2,9 @@ int	isspace_check(char a)
 {
 	if ((a == ' ') || (a == '\n') || (a == '\t') || (a == '\v')
 		|| (a == '\f') || (a == '\r'))
+	{
 		return (1);
+	}
 	else
 		return (0);
 }

@@ -12,9 +12,3 @@ void    *ft_memset(void *s, int c, size_t len)
     }
     return (s);
 }
-
-#include <stdio.h>
-int main()
-{
-	printf("%d\n", ft_memset(NULL));
-}
