@@ -1,4 +1,4 @@
-int	isspace_check(char a)
+int	isspace_check(const char a)
 {
 	if ((a == ' ') || (a == '\n') || (a == '\t') || (a == '\v')
 		|| (a == '\f') || (a == '\r'))
