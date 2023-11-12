@@ -23,7 +23,11 @@ ft_strnstr.c\
 ft_atoi.c\
 ft_calloc.c\
 ft_strdup.c\
-ft_strjoin.c
+ft_substr.c\
+ft_strjoin.c\
+ft_strtrim.c\
+ft_split.c\
+ft_itoa.c
 
 OBJ = ${SRC:.c=.o}
 
