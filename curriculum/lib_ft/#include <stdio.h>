@@ -1,0 +1,50 @@
+#include <stdio.h>
+int main()
+{
+    int a = 10;
+    t_list *b = ft_lstnew(a);
+    printf("%d\n", b->content);
+}
+
+#include <stdio.h>
+int main()
+{
+    int a = 10;
+    t_list *b = ft_lstnew(a);
+    t_list *c = ft_lstnew(5);
+    t_list *d = ft_lstnew(6);
+    ft_lstadd_front(&b, c);
+    ft_lstadd_front(&b, d);
+    while (b->next != NULL)
+    {
+        printf("%d\n", b->content);
+        b = b->next;
+    }
+    printf("%d\n", b->content);
+}
+
+
+#include <stdio.h>
+int main()
+{
+    int a = 10;
+    t_list *b = ft_lstnew(a);
+    t_list *c = ft_lstnew(5);
+    t_list *d = ft_lstnew(6);
+    t_list *e;
+    ft_lstadd_front(&b, c);
+    ft_lstadd_front(&b, d);
+    printf("%d\n", ft_lstsize(d));
+}
+#include <stdio.h>
+int main()
+{
+    int a = 10;
+    t_list *b = ft_lstnew(a);
+    t_list *c = ft_lstnew(5);
+    t_list *d = ft_lstnew(6);
+    t_list *e;
+    ft_lstadd_front(&b, c);
+    ft_lstadd_front(&b, d);
+    printf("%d\n", *ft_lstlast(b));
+}
