@@ -12,11 +12,10 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	if (!s)
-		return (0);
-	while (*s != '\0' && c != *s)
-		s++;
-	if (c == *s)
-		return ((char *)s);
+	while (*s)
+	    if(*s++ == (char)c)
+        	return ((char *)s - 1);
+    if (c == '\0')
+        return ((char *)s);
 	return (0);
 }
