@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: defimova <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/21 19:44:17 by defimova          #+#    #+#             */
+/*   Updated: 2024/01/21 20:02:06 by defimova         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 int	lens(char const *str, char charset)
@@ -53,31 +65,32 @@ char	*filline(char const *l, char c, int s)
 	n = i;
 	while (!(l[n] == c) && (l[n + 1] != '\0') && !(l[n + 1] == c))
 		n++;
-	if (!(cur = (char *)malloc((n - i + 2) * sizeof(char))))
-    {
+	cur = (char *)malloc((n - i + 2) * sizeof(char));
+	if (!cur)
+	{
 		return (NULL);
-        free(cur);
-    }
+		free(cur);
+	}
 	ft_strc(cur, l, i, n);
 	return (cur);
 }
 
-char    **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	char	**result;
 	int		i;
 	int		len;
 
 	if (!s)
-        return (NULL);
-    i = 0;
+		return (NULL);
+	i = 0;
 	len = lens(s, c);
 	result = (char **)malloc((len + 1) * sizeof(char *));
 	if (result == NULL)
-    {
+	{
 		return (NULL);
-        free(result);
-    }
+		free(result);
+	}
 	while (i < len)
 	{
 		result[i] = filline(s, c, i);
