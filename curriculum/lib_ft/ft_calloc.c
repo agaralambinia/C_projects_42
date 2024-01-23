@@ -14,13 +14,16 @@
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	size_t	countsize;
 	void	*dst;
 
-	countsize = count * size;
-	dst = malloc(countsize);
+	if (count && size && count > (2147483647 / size))
+		return (NULL);
+	dst = malloc(count * size);
 	if (!dst)
-		return (0);
-	ft_memset(dst, 0, countsize);
+	{
+		free(dst);
+		return (NULL);
+	}
+	ft_bzero(dst, count * size);
 	return (dst);
 }
