@@ -14,44 +14,61 @@
 
 int	ft_len(int n)
 {
-	int	len;
+	int		len;
+	long	nlong;
 
+	nlong = n;
 	len = 0;
-	if (n <= 0)
-		len += 1;
-		n /= -1;
-	while (n)
+	if (nlong < 0)
 	{
-		len ++;
-		n /= 10;
+		len++;
+		nlong *= -1;
+	}
+	while (nlong)
+	{
+		len++;
+		nlong /= 10;
 	}
 	return (len);
 }
 
 char	*ft_itoa(int n)
 {
-	int		len;
-	char	*res;
+	int			len;
+	char		*res;
 	long	nbr;
 
+	if (n == -2147483648)
+		nbr = 2147483648;
+	else if (n < 0)
+		nbr = n * -1;
+	else
+		nbr = n;
 	len = ft_len(n);
-	nbr = n;
 	res = (char *)malloc((len + 1) * sizeof(char));
 	if (!res)
 		return (NULL);
-	if (nbr < 0)
+	res[len + 1] = '\0';
+	while (len--)
 	{
-		res[0] = '-';
-		nbr /= -1;
+		res[len] = (nbr % 10) + 48;
+		nbr /= 10;
 	}
-	if (nbr == 0)
-		res[0] = '0';
-	res[len--] = '\0';
-	while (nbr > 0)
-	{
-		res[len] = nbr % 10 + '0';
-		len--;
-		nbr = nbr / 10;
-	}
+	if (n == 0)
+		res[0] = 48;
+	if (n < 0)
+		res[0] = 45;
 	return (res);
 }
+/*
+#include <stdio.h>
+#include <limits.h>
+int main()
+{
+	printf("%s\n", ft_itoa(-300));
+	printf("%s\n", ft_itoa(300));
+	printf("%s\n", ft_itoa(INT_MAX));
+	printf("%s\n", ft_itoa(INT_MIN));
+	printf("%s\n", ft_itoa(0));
+}
+*/
