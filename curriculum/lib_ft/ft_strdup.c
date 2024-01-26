@@ -19,7 +19,7 @@ char	*ft_strdup(const char *src)
 
 	if (!src)
 		return (0);
-	p = (char *) malloc(ft_strlen(src) * sizeof(char));
+	p = (char *) malloc(ft_strlen(src + 1) * sizeof(char));
 	if (p == NULL)
 		return (NULL);
 	i = 0;
@@ -36,7 +36,8 @@ char	*ft_strdup(const char *src)
 src – указатель на дублируемую строку.
 
 Возвращаемое значение:
-NULL – если не удалость выделить память под новую строку или скопировать строку на которую указывает аргумент str.
+NULL – если не удалость выделить память под новую строку или
+скопировать строку на которую указывает аргумент str.
 Указатель на дублирующую строку.
 
 Описание:

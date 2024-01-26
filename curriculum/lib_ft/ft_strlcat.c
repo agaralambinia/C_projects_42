@@ -49,7 +49,8 @@ int	main()
 	char dest[30]; memset(dest, 0, 30);
 	char * src = (char *)"AAAAAAAAA";
 	dest[0] = 'B';
-	printf("%d\n", ft_strlcat(dest, src, 0) == strlen(src) && !strcmp(dest, "B"));
+	printf("%d\n", ft_strlcat(dest, src, 0) == strlen(src) &&
+	!strcmp(dest, "B"));
 	dest[0] = 'B';
 	printf("%d\n", ft_strlcat(dest, src, 1) == 10 && !strcmp(dest, "B"));
 }

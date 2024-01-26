@@ -67,10 +67,7 @@ char	*filline(char const *l, char c, int s)
 		n++;
 	cur = (char *)malloc((n - i + 2) * sizeof(char));
 	if (!cur)
-	{
 		return (NULL);
-		free(cur);
-	}
 	ft_strc(cur, l, i, n);
 	return (cur);
 }
@@ -87,10 +84,7 @@ char	**ft_split(char const *s, char c)
 	len = lens(s, c);
 	result = (char **)malloc((len + 1) * sizeof(char *));
 	if (result == NULL)
-	{
 		return (NULL);
-		free(result);
-	}
 	while (i < len)
 	{
 		result[i] = filline(s, c, i);
