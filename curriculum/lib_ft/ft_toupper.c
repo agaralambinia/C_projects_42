@@ -18,3 +18,17 @@ char	ft_toupper(int c)
 		return (c - 32);
 	return (c);
 }
+/*
+Используется для преобразования строчного алфавита в верхний регистр
+*/
+/*
+#include <stdio.h>
+int	main()
+{
+	printf("Z %c\n", ft_toupper('z'));
+	printf("A %c\n", ft_toupper('a'));
+	printf("Z %c\n", ft_toupper('Z'));
+	printf("A %c\n", ft_toupper('A'));
+	printf("1 %c\n", ft_toupper('1'));
+}
+*/

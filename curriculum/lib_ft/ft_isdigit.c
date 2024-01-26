@@ -16,3 +16,17 @@ int	ft_isdigit(int str)
 		return (1);
 	return (0);
 }
+/*
+Проверяет аргумент, передаваемый через параметр str,
+является ли он числом
+*/
+/*
+#include <stdio.h>
+int	main()
+{
+	printf("1 %d\n", ft_isdigit('0'));
+	printf("1 %d\n", ft_isdigit('9'));
+	printf("0 %d\n", ft_isdigit('9' + 1));
+	printf("0 %d\n", ft_isdigit('0' - 1));
+}
+*/

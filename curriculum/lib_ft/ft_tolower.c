@@ -18,3 +18,17 @@ char	ft_tolower(int c)
 		return (c + 32);
 	return (c);
 }
+/*
+Используется для преобразования алфавита в нижний регистр
+*/
+/*
+#include <stdio.h>
+int	main()
+{
+	printf("z %c\n", ft_tolower('z'));
+	printf("a %c\n", ft_tolower('a'));
+	printf("z %c\n", ft_tolower('Z'));
+	printf("a %c\n", ft_tolower('A'));
+	printf("1 %c\n", ft_tolower('1'));
+}
+*/

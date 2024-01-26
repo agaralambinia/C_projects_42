@@ -16,3 +16,17 @@ int	ft_isprint(int str)
 		return (1);
 	return (0);
 }
+/*
+Проверяет аргумент, передаваемый через параметр str,
+является ли символ печатаемым
+*/
+/*
+#include <stdio.h>
+int	main()
+{
+	printf("1 %d\n", ft_isprint(32));
+	printf("1 %d\n", ft_isprint(126));
+	printf("0 %d\n", ft_isprint(31));
+	printf("0 %d\n", ft_isprint(127));
+}
+*/

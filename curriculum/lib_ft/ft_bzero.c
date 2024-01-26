@@ -23,3 +23,23 @@ void	ft_bzero(void *s, size_t n)
 		d++;
 	}
 }
+/*
+Устанавливает первые n байтов области, начинающейся с s в нули (пустые байты).
+*/
+/*
+#include <stdio.h>
+#include <string.h>
+int	main()
+{
+	char tab[100];
+	memset(tab, 'A', 10);
+	ft_bzero(tab, 0);
+	printf("%s\n", tab);
+	char tab2[100];
+	memset(tab2, 'A', 15);
+	ft_bzero(tab2, 10);
+	printf("%s\n", tab2);
+	printf("%c\n", tab2[2]);
+	printf("%c\n", tab2[14]);
+}
+*/

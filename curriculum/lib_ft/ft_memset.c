@@ -21,3 +21,22 @@ void	*ft_memset(void *s, int c, size_t len)
 		*(i++) = (unsigned char)c;
 	return (s);
 }
+/*
+Функция заполняет первые len байт области памяти, на которую указывает аргумент s,
+символом, код которого указывается аргументом c.
+*/
+/*
+#include <stdio.h>
+int	main()
+{
+	char tab[100];
+	ft_memset(tab, 'A', 10);
+	printf("%s\n", tab);
+	char tab2[100];
+	ft_memset(tab2, 'A', 1);
+	printf("%s\n", tab2);
+	char tab3[100];
+	ft_memset(tab3, 'A', 0);
+	printf("%c\n", tab3[0]);
+}
+*/

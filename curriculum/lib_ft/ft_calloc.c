@@ -27,3 +27,37 @@ void	*ft_calloc(size_t count, size_t size)
 	ft_bzero(dst, count * size);
 	return (dst);
 }
+/*
+Выделяет блок памяти для массива размером count элементов, каждый из которых занимает
+size байт, и инициализирует все свои биты нулями.
+В результате выделяется блок памяти размером count * size байт, весь блок заполнен нулями.
+
+Параметры функции:
+count — количество элементов массива, под который выделяется память;
+size — размер одного элемента в байтах.
+Возвращаемое значение — указатель на выделенный блок памяти.
+Тип данных, на который ссылается указатель, всегда void*, поэтому его можно привести к желаемому типу данных.
+
+Если функции не удалось выделить требуемый блок памяти, возвращается нулевой указатель.
+*/
+/*
+#include <stdio.h>
+#include <string.h>
+#include <limits.h>
+int	main()
+{
+		void * p = ft_calloc(2, 2);
+	char e[] = {0, 0, 0, 0};
+	printf("%d\n", ft_calloc(SIZE_MAX, SIZE_MAX) == NULL);
+	printf("%d\n", ft_calloc(INT_MAX, INT_MAX) == NULL);
+	printf("%d\n", ft_calloc(INT_MIN, INT_MIN) == NULL);
+	p = ft_calloc(0, 0);
+	printf("%d\n", p != NULL); free(p);
+	p = ft_calloc(0, 5);
+	printf("%d\n", p != NULL); free(p);
+	p = ft_calloc(5, 0);
+	printf("%d\n", p != NULL); free(p);
+	p = ft_calloc(-5, -5);
+	printf("%d\n", p == NULL); free(p);
+}
+*/
