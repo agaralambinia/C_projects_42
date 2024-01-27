@@ -6,7 +6,7 @@
 /*   By: defimova <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 20:52:41 by defimova          #+#    #+#             */
-/*   Updated: 2024/01/21 20:59:53 by defimova         ###   ########.fr       */
+/*   Updated: 2024/01/27 10:34:13 by defimova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	unsigned long	i;
 	char			*res;
 
+	if (!s || !f)
+		return (NULL);
 	len = ft_strlen(s);
 	res = (char *) malloc((len + 1) * sizeof(char));
 	if (!res)

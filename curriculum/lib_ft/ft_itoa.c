@@ -6,7 +6,7 @@
 /*   By: defimova <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 20:02:27 by defimova          #+#    #+#             */
-/*   Updated: 2024/01/21 20:46:50 by defimova         ###   ########.fr       */
+/*   Updated: 2024/01/27 07:22:10 by defimova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int	ft_len(int n)
 	long	nlong;
 
 	nlong = n;
+	if (n == 0)
+		return (1);
 	len = 0;
 	if (nlong < 0)
 	{
@@ -48,7 +50,7 @@ char	*ft_itoa(int n)
 	res = (char *)malloc((len + 1) * sizeof(char));
 	if (!res)
 		return (NULL);
-	res[len + 1] = '\0';
+	res[len] = '\0';
 	while (len--)
 	{
 		res[len] = (nbr % 10) + 48;
@@ -58,7 +60,6 @@ char	*ft_itoa(int n)
 		res[0] = 48;
 	if (n < 0)
 		res[0] = 45;
-
 	return (res);
 }
 /*

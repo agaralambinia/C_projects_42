@@ -6,7 +6,7 @@
 /*   By: defimova <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 21:18:44 by defimova          #+#    #+#             */
-/*   Updated: 2024/01/21 21:19:46 by defimova         ###   ########.fr       */
+/*   Updated: 2024/01/27 10:34:52 by defimova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,14 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	del(lst->content);
-	free(lst);
+	if (lst && del)
+	{
+		del(lst->content);
+		free(lst);
+	}
 }
 /*
-Аргументы:
+   Аргументы:
 lst: Адрес ноды для удаления
 f: Адрес функции для удаления
 

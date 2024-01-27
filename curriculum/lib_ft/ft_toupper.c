@@ -6,15 +6,13 @@
 /*   By: defimova <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 19:08:31 by defimova          #+#    #+#             */
-/*   Updated: 2024/01/21 19:11:08 by defimova         ###   ########.fr       */
+/*   Updated: 2024/01/27 10:46:14 by defimova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	ft_toupper(int c)
+int	ft_toupper(int c)
 {
-	if (!c)
-		return (0);
-	if ((c >= 97) && (c <= 122))
+	if ((unsigned char)c >= 97 && (unsigned char)c <= 122)
 		return (c - 32);
 	return (c);
 }

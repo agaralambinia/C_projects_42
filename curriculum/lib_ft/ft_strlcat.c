@@ -6,7 +6,7 @@
 /*   By: defimova <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 19:02:26 by defimova          #+#    #+#             */
-/*   Updated: 2024/01/21 19:07:13 by defimova         ###   ########.fr       */
+/*   Updated: 2024/01/27 10:45:31 by defimova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t l)
 	size_t	dst_len;
 
 	dst_len = 0;
+	if (!dst && !l)
+		return (0);
 	while (dst[dst_len] != '\0' && dst_len < l)
 		dst_len++;
 	i = dst_len;

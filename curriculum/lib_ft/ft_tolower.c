@@ -6,15 +6,13 @@
 /*   By: defimova <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 19:11:29 by defimova          #+#    #+#             */
-/*   Updated: 2024/01/21 19:12:28 by defimova         ###   ########.fr       */
+/*   Updated: 2024/01/27 10:48:20 by defimova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	ft_tolower(int c)
+int	ft_tolower(int c)
 {
-	if (!c)
-		return (0);
-	if ((c >= 65) && (c <= 90))
+	if ((unsigned char)c >= 65 && (unsigned char)c <= 90)
 		return (c + 32);
 	return (c);
 }

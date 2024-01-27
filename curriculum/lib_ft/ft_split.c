@@ -6,7 +6,7 @@
 /*   By: defimova <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 19:44:17 by defimova          #+#    #+#             */
-/*   Updated: 2024/01/21 20:02:06 by defimova         ###   ########.fr       */
+/*   Updated: 2024/01/27 10:40:01 by defimova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,15 +82,21 @@ char	**ft_split(char const *s, char c)
 
 	if (!s)
 		return (NULL);
-	i = 0;
+	i = -1;
 	len = lens(s, c);
 	result = (char **)malloc((len + 1) * sizeof(char *));
 	if (result == NULL)
 		return (NULL);
-	while (i < len)
+	while (++i < len)
 	{
 		result[i] = filline(s, c, i);
-		i++;
+		if (!result[i])
+		{
+			while (--i)
+				free(result[i]);
+			free(result);
+			return (NULL);
+		}
 	}
 	result[i] = NULL;
 	return (result);

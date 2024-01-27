@@ -6,7 +6,7 @@
 /*   By: defimova <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 19:33:53 by defimova          #+#    #+#             */
-/*   Updated: 2024/01/21 19:35:06 by defimova         ###   ########.fr       */
+/*   Updated: 2024/01/27 08:45:01 by defimova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,7 @@ char	*ft_strdup(const char *src)
 	int		i;
 	char	*p;
 
-	if (!src)
-		return (0);
-	p = (char *) malloc(ft_strlen(src + 1) * sizeof(char));
+	p = (char *) malloc((ft_strlen(src) + 1) * sizeof(char));
 	if (p == NULL)
 		return (NULL);
 	i = 0;

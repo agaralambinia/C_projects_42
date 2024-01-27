@@ -6,7 +6,7 @@
 /*   By: defimova <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 19:27:31 by defimova          #+#    #+#             */
-/*   Updated: 2024/01/26 17:02:58 by defimova         ###   ########.fr       */
+/*   Updated: 2024/01/27 10:45:20 by defimova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	isspace_check(const char a)
 		return (0);
 }
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
 	int	i;
 	int	sign;
@@ -30,8 +30,6 @@ int	ft_atoi(char *str)
 	sign = 1;
 	i = 0;
 	res = 0;
-	if (!str)
-		return (0);
 	while (isspace_check(str[i]))
 		i++;
 	if (str[i] == 43 || str[i] == 45)
@@ -40,7 +38,7 @@ int	ft_atoi(char *str)
 			sign = (-1) * sign;
 		i++;
 	}
-	while (48 <= str[i] && str[i] <= 57)
+	while (str[i] >= 48 && str[i] <= 57)
 	{
 		res = res * 10 - 48 + str[i];
 		i++;

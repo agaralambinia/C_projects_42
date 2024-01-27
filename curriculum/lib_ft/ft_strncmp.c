@@ -6,7 +6,7 @@
 /*   By: defimova <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 19:14:17 by defimova          #+#    #+#             */
-/*   Updated: 2024/01/21 19:14:20 by defimova         ###   ########.fr       */
+/*   Updated: 2024/01/27 08:39:41 by defimova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,19 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t	i;
+	size_t				i;
+	const unsigned char	*ss1;
+	const unsigned char	*ss2;
 
+	ss1 = (const unsigned char *)s1;
+	ss2 = (const unsigned char *)s2;
 	i = 0;
-	if (!s1 || !s2)
+	if (!ss1 && !ss2)
 		return (0);
-	while ((s1[i] || s2[i]) && (i < n))
+	while ((ss1[i] || ss2[i]) && (i < n))
 	{
-		if (s1[i] != s2[i])
-			return (s1[i] - s2[i]);
+		if (ss1[i] != ss2[i])
+			return (ss1[i] - ss2[i]);
 		i++;
 	}
 	return (0);
