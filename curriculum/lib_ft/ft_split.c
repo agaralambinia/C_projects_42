@@ -12,23 +12,25 @@
 
 #include "libft.h"
 
-int	lens(char const *str, char charset)
+static int	lens(char const *str, char charset)
 {
 	int	len;
 	int	i;
 
 	len = 0;
 	i = 0;
-	while ((str[i] == charset) && (str[i + 1] != '\0'))
-		i++;
-	while (str[i] != '\0')
+	while (*str)
 	{
-		if (!(str[i] == charset) && ((str[i + 1] == charset)
-				|| (str[i + 1] == '\0')))
-			len++;
-		i++;
+		if (*str != charset && len == 0)
+		{
+			len = 1;
+			i++;
+		}
+		else if (*str == charset)
+			len = 0;
+		str++;
 	}
-	return (len);
+	return (i);
 }
 
 char	*ft_strc(char *dest, char const *src, int start, int end)
@@ -90,7 +92,7 @@ char	**ft_split(char const *s, char c)
 		result[i] = filline(s, c, i);
 		i++;
 	}
-	result[i] = 0;
+	result[i] = NULL;
 	return (result);
 }
 /*
@@ -106,4 +108,22 @@ NULL – если не удалость выделить память
 Выделяет память и возвращает массив строк, полученный путем разделения
 ’s’ с использованием символа ’c’ в качестве разделителя.
 Массив должен заканчиваться NULL поинтером
+*/
+/*
+#include <stdio.h>
+int main()
+{	
+	char str[] = "aa\0bbb\0kkk\0kkkk";
+	char c = '\0';
+	int i;
+	char **result;
+
+	i = 0;
+	result = ft_split(str, c);
+	while (*result)
+	{
+		printf("%s\n", *result);
+		result++;
+	}
+}
 */

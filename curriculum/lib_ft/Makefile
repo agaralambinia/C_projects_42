@@ -35,7 +35,7 @@ ft_putstr_fd.c\
 ft_putendl_fd.c\
 ft_putnbr_fd.c
 
-BONUS = ft_lstnew.c\
+SRC_BONUS = ft_lstnew.c\
 ft_lstadd_front.c\
 ft_lstsize.c\
 ft_lstlast.c\
@@ -47,7 +47,7 @@ ft_lstmap.c
 
 OBJ = ${SRC:.c=.o}
 
-B_OBJ = ${BONUS:.c=.o}
+OBJ_BONUS = $(SRC_BONUS:.c=.o)
 
 NAME = libft.a
 
@@ -62,12 +62,16 @@ ${NAME}: ${OBJ}
 
 all: ${NAME}
 
+bonus: $(OBJ_BONUS)
+	ar rc $(NAME) $(OBJ_BONUS)
+	ranlib ${NAME}
+
 clean:
-	rm -f ${OBJ}
+	rm -f ${OBJ} ${OBJ_BONUS}
 
 fclean: clean
 	rm -f ${NAME}
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus

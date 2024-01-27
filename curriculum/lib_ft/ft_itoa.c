@@ -58,6 +58,7 @@ char	*ft_itoa(int n)
 		res[0] = 48;
 	if (n < 0)
 		res[0] = 45;
+
 	return (res);
 }
 /*
