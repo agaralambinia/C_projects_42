@@ -1,7 +1,6 @@
 CC = cc
 
 SRC = input_parser.c\
-	main.c\
 	output.c\
 	printf.c
 

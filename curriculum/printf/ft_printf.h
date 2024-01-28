@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.c                                           :+:      :+:    :+:   */
+/*   printf.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: defimova <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/28 21:20:54 by defimova          #+#    #+#             */
-/*   Updated: 2024/01/28 21:20:56 by defimova         ###   ########.fr       */
+/*   Created: 2024/01/28 21:21:30 by defimova          #+#    #+#             */
+/*   Updated: 2024/01/28 21:21:31 by defimova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#ifndef PRINTF_H
+# define PRINTF_H
+# include <stdlib.h>
+# include <unistd.h>
+# include <stdarg.h>
+# include "./lib_ft/libft.h"
 
-int	ft_printf(const char *f, ...)
-{
-	va_list	ap;
-	int		cnt;
+int	ft_printf(const char *f, ...);
+int	print_conv(char c, va_list ap);
+int	ft_putchar(int c);
+int	ft_putstr(char *str);
+int	nbrb(long nbr, int base, int d);
+int	ft_putp(long nbr);
 
-	va_start(ap, f);
-	cnt = 0;
-	while (*f)
-	{
-		if (*f == '%')
-			cnt += print_conv(*(++f), ap);
-		else
-			cnt += write(1, f, 1);
-		f++;
-	}
-	return (cnt);
-}
+#endif
+//__attribute__ ((__format__ (__printf__, 1, 2)))

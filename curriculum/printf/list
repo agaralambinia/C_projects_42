@@ -1,0 +1,22 @@
+In any text field in MacOS
+
+Ctrl +
+
+r history search
+p previous command in history
+n next command in history
+z send job to background
+a go to the beginning of the line
+e go to the end of the line
+w erase word
+u erase line
+b back one character
+f forward one character
+
+??? -> go right or left
+
+` in VS code to switch to terminal emulator
+
+Option +
+
+backspace in VS code to erase word

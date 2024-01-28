@@ -1,35 +1,56 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   output.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: defimova <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/28 21:20:41 by defimova          #+#    #+#             */
+/*   Updated: 2024/01/28 21:20:43 by defimova         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "printf.h"
 
-int ft_putchar(int c)
+int	ft_putchar(int c)
 {
-    return (write(1, &c, 1));
+	return (write(1, &c, 1));
 }
 
-int ft_putstr(char *str)
+int	ft_putstr(char *str)
 {
-    int cnt;
+	int	cnt;
 
-    cnt = 0;
-    while (*str)
-    {
-        cnt += ft_putchar((int)*str);
-        ++str;
-    }
-    return (cnt);
+	cnt = 0;
+	while (*str)
+	{
+		cnt += ft_putchar((int)*str);
+		++str;
+	}
+	return (cnt);
 }
 
-int ft_putnbr_base(long nbr, int base)
+int	nbrb(long nbr, int base, int d)
 {
-    char    *dict_l;
+	char	*dup[2];
 
-    dict_l = "0123456789abcdef";
-    //добавить верхний
-    if (nbr < 0)
-        return (ft_putchar('-') + ft_putnbr_base(-nbr, base));
-    else if (nbr < base)
-        return (ft_putchar(dict_l[nbr]));
-    else
-    {
-        return (ft_putnbr_base(nbr / base, base) + ft_putnbr_base(nbr % base, base));
-    }
+	dup[0] = "0123456789abcdef";
+	dup[1] = "0123456789ABCDEF";
+	if (nbr < 0)
+		return (ft_putchar('-') + nbrb(-nbr, base, d));
+	else if (nbr < base)
+		return (ft_putchar(dup[d][nbr]));
+	else
+	{
+		return (nbrb(nbr / base, base, d) + nbrb(nbr % base, base, d));
+	}
+}
+
+int	ft_putp(long nbr)
+{
+	int	cnt;
+
+	cnt = ft_putstr("0x");
+	cnt += nbrb(nbr, 16, 0);
+	return (cnt);
 }
