@@ -1,12 +1,12 @@
-#include <printf.h>
+#include "printf.h"
 #include <stdio.h>
+#include <limits.h>
 int main()
 {
-    //argcount tests
-    printf("argcount %d\n", argcount("%%")==0);
-    printf("argcount %d\n", argcount("%d")==1);
-    printf("argcount %d\n", argcount(""));
-    printf("argcount %d\n", argcount("eee%d%deee")==2);
+    int c;
+
+    c = ft_printf("%d\n", INT_MIN);
+    ft_printf("THE CHARS %d\n", c);
 }
 /*
 - check input
