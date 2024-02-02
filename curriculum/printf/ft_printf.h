@@ -6,12 +6,12 @@
 /*   By: defimova <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/28 21:21:30 by defimova          #+#    #+#             */
-/*   Updated: 2024/01/28 21:21:31 by defimova         ###   ########.fr       */
+/*   Updated: 2024/02/03 02:26:31 by defimova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRINTF_H
-# define PRINTF_H
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdarg.h>
@@ -22,5 +22,6 @@ int	print_conv(char c, va_list ap);
 int	ft_putchar(int c);
 int	ft_putstr(char *str);
 int	nbrb(long nbr, int base, int d);
-int ft_putp(unsigned long int nbr);
+int	ft_putp(unsigned long int nbr);
+
 #endif

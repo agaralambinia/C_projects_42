@@ -50,7 +50,9 @@ int	nbrb(long nbr, int base, int d)
 
 int	p_nb(unsigned long int nbr, int base)
 {
-	char	dup[16] = "0123456789abcdef";
+	char	*dup;
+
+	dup = "0123456789abcdef";
 	if (nbr < 0)
 		return (ft_putchar('-') + p_nb(-nbr, 16));
 	else if (nbr < 16)
