@@ -22,7 +22,5 @@ int	print_conv(char c, va_list ap);
 int	ft_putchar(int c);
 int	ft_putstr(char *str);
 int	nbrb(long nbr, int base, int d);
-int	ft_putp(long nbr);
-
+int ft_putp(unsigned long int nbr);
 #endif
-//__attribute__ ((__format__ (__printf__, 1, 2)))

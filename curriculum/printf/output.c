@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int	ft_putchar(int c)
 {
@@ -22,6 +22,8 @@ int	ft_putstr(char *str)
 	int	cnt;
 
 	cnt = 0;
+	if (!str)
+		return (ft_putstr("(null)"));
 	while (*str)
 	{
 		cnt += ft_putchar((int)*str);
@@ -46,11 +48,24 @@ int	nbrb(long nbr, int base, int d)
 	}
 }
 
-int	ft_putp(long nbr)
+int	p_nb(unsigned long int nbr, int base)
+{
+	char	dup[16] = "0123456789abcdef";
+	if (nbr < 0)
+		return (ft_putchar('-') + p_nb(-nbr, 16));
+	else if (nbr < 16)
+		return (ft_putchar(dup[nbr]));
+	else
+	{
+		return (p_nb(nbr / base, 16) + p_nb(nbr % base, 16));
+	}
+}
+
+int	ft_putp(unsigned long int nbr)
 {
 	int	cnt;
 
 	cnt = ft_putstr("0x");
-	cnt += nbrb(nbr, 16, 0);
+	cnt += p_nb(nbr, 16);
 	return (cnt);
 }

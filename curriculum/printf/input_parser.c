@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int	print_conv(char c, va_list ap)
 {
@@ -22,7 +22,7 @@ int	print_conv(char c, va_list ap)
 	else if (c == 's')
 		cnt += ft_putstr(va_arg(ap, char *));
 	else if (c == 'p')
-		cnt += ft_putp((long)va_arg(ap, long long));
+		cnt += ft_putp((unsigned long int)va_arg(ap, long long));
 	else if ((c == 'd') || (c == 'i'))
 		cnt += nbrb((long)va_arg(ap, int), 10, 0);
 	else if (c == 'u')
